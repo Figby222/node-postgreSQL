@@ -3,6 +3,12 @@ const app = express();
 import indexRouter from "./routers/indexRouter.mjs";
 import newUserRouter from "./routers/newUserRouter.mjs";
 import "dotenv/config";
+import path from "node:path";
+
+const __dirname = import.meta.dirname;
+
+app.set("views", path.join(__dirname, "views"))
+app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
 
