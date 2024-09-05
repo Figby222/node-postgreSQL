@@ -12,4 +12,10 @@ async function usersListGet(req, res) {
     res.render("usersList", { title: "Usernames", users: usernames });
 }
 
-export { usersListGet }
+async function deleteUsersPost(req, res) {
+    await db.deleteAllUsernames();
+    console.log("Usernames deleted");
+    return res.redirect("/");
+}
+
+export { usersListGet, deleteUsersPost }
