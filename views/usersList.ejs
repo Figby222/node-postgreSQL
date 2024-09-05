@@ -11,6 +11,9 @@
             <input type="text" name="search" id="search" />
             <button type="submit">Submit</button>
         </form>
+        <form action="/" method="POST">
+            <button type="submit" onclick="confirm(`Deleting all users. Are you sure whatever you're doing is worth it?`);">Delete all users</button>
+        </form>
         <% if (locals.users) { %>
             <ul>
                 <% users.map((user) => { %>
