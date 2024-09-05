@@ -10,7 +10,7 @@ async function insertUsername(username) {
 }
 
 async function searchUsername(subString) {
-    const { rows } = await pool.query("SELECT * FROM usernames WHERE username LIKE '%$1%'", [subString]);
+    const { rows } = await pool.query("SELECT * FROM usernames WHERE LOWER(username) LIKE LOWER($1)", ['%' + subString + '%']);
 
 
     return rows;
