@@ -5,6 +5,12 @@
         <title><%= title %></title>
     </head>
     <body>
+        <form action="/" method="GET">
+            <h2>Search For a UserName</h2>
+            <label for="search">Username: </label>
+            <input type="text" name="search" id="search" />
+            <button type="submit">Submit</button>
+        </form>
         <% if (locals.users) { %>
             <ul>
                 <% users.map((user) => { %>
