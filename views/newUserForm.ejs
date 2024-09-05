@@ -6,7 +6,10 @@
     </head>
     <body>
         <h1><%= title %></h1>
-        <label for="username">Username: </label>
-        <input type="text" name="username" id="username" />
+        <form action="/new" method="POST">
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username" />
+            <button type="submit">Submit</button>
+        </form>
     </body>
 </html>
