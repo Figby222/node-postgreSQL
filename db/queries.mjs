@@ -16,4 +16,9 @@ async function searchUsername(subString) {
     return rows;
 }
 
-export default { getAllUsernames, insertUsername, searchUsername }
+async function deleteAllUsernames() {
+    await pool.query("DELETE FROM usernames");
+
+}
+
+export default { getAllUsernames, insertUsername, searchUsername, deleteAllUsernames }
